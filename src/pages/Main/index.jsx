@@ -1,6 +1,11 @@
+import Banner from "../../components/Banner"
+
 const Main = () => {
     return (
-     <p>Inicio</p>
+
+     <>
+       <Banner/>
+     </>
      
     )
 }
