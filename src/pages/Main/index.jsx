@@ -1,7 +1,10 @@
+import ContainerCategory from "../../components/ContainerCategory"
+
 const Main = () => {
     return (
-     <p>Inicio</p>
-     
+        <>
+            <ContainerCategory />
+        </>
     )
 }
 
