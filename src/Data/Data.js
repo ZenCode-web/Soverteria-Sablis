@@ -7,13 +7,15 @@ import InconSalgadinhoEPipocas from "../assets/icon/InconSalgadinhoEPipocas.png"
 import InconSaldaDeFlutas from "../assets/icon/InconSaldaDeFlutas.png"
 import InconBebidasQuentes from "../assets/icon/InconBebidasQuentes.png"
 import InconBebidasGeladas from "../assets/icon/InconBebidasGeladas.png"
+import BannerSovete from "../assets/icon/InconTacaDeSovete1.png"
 
 const Data = [
     {
       headerLogo: [
         {src: LogoSoveteria, alt: "Logo sovete"}
-      ],
-
+      ]
+    },
+    {
       headerCarrinho: [
         {src: InconCarrinho, alt: "Carrinho"}
       ],
@@ -27,6 +29,11 @@ const Data = [
         { id: 5, icon: InconSaldaDeFlutas, alt: "Salada de Frutas e Doces", name: "Salada de Frutas e Doces", link: "/salada-de-frutas-e-doces" },
         { id: 6, icon: InconBebidasQuentes, alt: "Bebidas Quentes", name: "Bebidas Quentes", link: "/bebidas-quentes" },
         { id: 7, icon: InconBebidasGeladas, alt: "Bebidas Geladas", name: "Bebidas Geladas", link: "/bebidas-geladas" },
+      ]
+    },
+    {
+      bannerSoveter: [
+        {src: BannerSovete, alt: "Incon Soverte"}
       ]
     }
 ]
