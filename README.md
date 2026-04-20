@@ -1,12 +1,39 @@
-# React + Vite
+# 🍦 Sorveteria Sablis
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um site moderno e responsivo desenvolvido para a **Sorveteria Sablis**, focado em proporcionar uma experiência visual deliciosa e intuitiva para os clientes.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Sobre o Projeto
 
-## Expanding the ESLint configuration
+Este projeto está sendo desenvolvido pela **ZenCode**, utilizando as tecnologias mais modernas do ecossistema Front-end para garantir performance e um design impecável. O foco principal é a vitrine de produtos e a facilidade de navegação para o usuário final.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### ✨ Diferenciais
+- **Design Elegante:** Inspirado em tons terrosos e pastéis.
+- **Mobile First:** Totalmente otimizado para dispositivos móveis.
+- **Performance:** Carregamento ultra-rápido graças ao Vite.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+O projeto foi construído com a stack:
+
+- [React.js](https://reactjs.org/) - Biblioteca para construção de interfaces.
+- [Vite](https://vitejs.dev/) - Build tool de próxima geração para um desenvolvimento rápido.
+- [Tailwind CSS v4](https://tailwindcss.com/) - Framework CSS focado em utilitários para um design customizado e leve.
+- [React Router](https://reactrouter.com/) - Para navegação dinâmica entre páginas.
+
+---
+
+## 📂 Estrutura de Pastas
+
+Seguindo os padrões de mercado da **ZenCode**:
+
+```text
+src/
+├── assets/      # Imagens, logos e ícones
+├── components/  # Peças reutilizáveis da interface
+├── pages/       # Telas completas da aplicação
+├── styles/      # Configurações globais de tema e variáveis
+└── App.jsx      # Componente principal e rotas

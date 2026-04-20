@@ -2,33 +2,25 @@
 
 @theme{
   
-  /* Cores de Fundo e Superfície */
-  --color-background: #FDF8F2;
-  --color-surface: #F5E6C7;      /* Cor de componentes leves */
+ /* Cores de Fundo e Superfície */
+--color-background: #FDF8F0;
+--color-surface: #F5E6C8;
 
-  /* Cores Principais e Destaque */
-  --color-primary: #C9963A;      /* Cor de componentes/destaque */
-  --color-secondary: #E7C477;    /* Cor de títulos */
-  
-  /* Cores Escuras e Contraste */
-  --color-header: #3E2008;
-  --color-accent: #915727;       /* Cor de componentes mais escura */
-  --color-deep-brown: #553212;   /* Para o início do gradient */
+/* Cores Principais e Destaque */
+--color-primary: #C9963A;
+--color-secondary: #E8C47A;
 
-  /* Cores Básicas */
-  --color-white: #FFFFFF;
-  --color-black: #000000;
+/* Cores Escuras e Contraste */
+--color-header: #3E2008;
+--color-accent: #7A4A1E;
+--color-deep-brown: #553212;
 
-  /* Gradiente Personalizado */
-  --background-image-golden-gradient: linear-gradient(to right, #553212, #915727);  
+/* Gradiente */
+--background-image-golden-gradient: linear-gradient(135deg, #3E2008, #7A4A1E, #9B5E2A);
 
-   /*Fonts*/
-  --font-main-inter:"Inter", sans-serif;
-  --font-secondary-montserrat:"Montserrat", sans-serif;
-  --font-lora:"Lora", serif;
+/* Fontes */
+--font-main: "Nunito", sans-serif;
+--font-display: "Playfair Display", serif;
+
 }
 
-@utility lora-it {
-  font-family: var(--font-lora);
-  font-style: italic;
-}
