@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Header/>
-         <main className="bg-background">
+         <main className="bg-background h-screen">
             <Outlet/>
          </main>
       <Footer/>
