@@ -7,13 +7,13 @@ function App() {
  
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Header/>
-         <main className="bg-background h-screen pt-20 lg:pt-22">
+         <main className="bg-background pt-20 lg:pt-22 flex-1">
             <Outlet/>
          </main>
       <Footer/>
-    </>
+    </div>
   )
 }
 

@@ -39,3 +39,6 @@
   animation: float 3s ease-in-out infinite;
 }
 
+body, #root {
+  min-height: 100vh;
+}
