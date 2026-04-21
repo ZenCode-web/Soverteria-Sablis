@@ -25,7 +25,7 @@ const Header = () => {
 
                  <H2 className="text-[18px] font-main font-bold text-secondary lg:text-[24px]" valor="Soveteria"/>
 
-                 <P className="text-[14px] font-normal italic font-display text-surface lg:text-[18px]" valor="Samblis"/>
+                 <P className="text-[14px] font-normal italic font-display text-surface lg:text-[18px]" valor="Sambles"/>
 
                 </div>
 

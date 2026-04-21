@@ -1,4 +1,4 @@
-# 🍦 Sorveteria Samblis
+# 🍦 Sorveteria Sambles
 
 Um site moderno e responsivo desenvolvido para a **Sorveteria Sablis**, focado em proporcionar uma experiência visual deliciosa e intuitiva para os clientes.
 
