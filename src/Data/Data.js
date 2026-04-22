@@ -33,6 +33,34 @@ import ImgMonster from "../assets/imgs/monster-473ml.png"
 import ImgMisto from "../assets/imgs/misto.png"
 import ImgTapioca from "../assets/imgs/tapioca.png"
 
+const SORVETE_FLAVORS = [
+    "Chocolate", "Morango", "Açaí com leite condensado", "Flocos",
+    "Tapioca com queijo", "Tapioca com coco", "Flavete suíço", "Cometa",
+    "Delícia de chocolate", "Delícia de morango", "Graviola", "Delícia de abacaxi",
+    "Pistache", "Céu azul", "Laquitus", "Uva com passas", "Creme com passas",
+    "Leite condensado", "Chocolate branco", "Nata goiaba", "Coco nervado", "Tofê", "Chiclete"
+]
+
+const SORVETE_CALDA = ["Morango", "Chocolate", "Kiwi", "Leite condensado"]
+
+const TRUFA_FLAVORS = ["Morango", "Maracujá", "Limão", "Brigadeiro", "Beijinho"]
+
+const MILKSHAKE_FLAVORS = [
+    "Chocolate", "Morango", "Baunilha", "Maracujá", "Limão",
+    "Açaí", "Ovomaltine", "Oreo", "Nutella"
+]
+
+const TAPIOCA_FLAVOR_CATEGORIES = [
+    { label: "Salgados", options: ["Frango", "Queijo", "Presunto", "Calabresa", "Charque", "Atum"] },
+    { label: "Doces", options: ["Chocolate", "Morango", "Leite condensado", "Romeu e Julieta", "Coco"] }
+]
+
+const ACAI_FRUITS = ["Banana", "Morango", "Uva", "Kiwi"]
+
+const ACAI_ADDONS = [
+    { name: "M&M's", price: 1.00 }
+]
+
 const Data = [
     {
       headerLogo: [
@@ -63,37 +91,37 @@ const Data = [
     {
       products: {
         sorvetes: [
-          { id: 1, name: "Sorvete 1 bola", obs: "copo", price: 4.00, category: "Sorvetes e Gelados", image: ImgSorvete },
-          { id: 2, name: "Sorvete 2 bolas", obs: "casquinha", price: 9.00, category: "Sorvetes e Gelados", image: ImgSorvete },
-          { id: 3, name: "Sorvete 2 bolas", obs: "copo", price: 8.00, category: "Sorvetes e Gelados", image: ImgSorvete },
-          { id: 4, name: "Sorvete 3 bolas", obs: "copo", price: 11.00, category: "Sorvetes e Gelados", image: ImgSorvete },
-          { id: 5, name: "Sorvete meio litro", obs: null, price: 18.00, category: "Sorvetes e Gelados", image: ImgSorvete },
-          { id: 6, name: "Sorvete 1 litro", obs: null, price: 29.00, category: "Sorvetes e Gelados", image: ImgSorvete },
-          { id: 7, name: "Trufa", obs: "unidade", price: 3.00, category: "Sorvetes e Gelados", image: ImgTrufa },
+          { id: 1, name: "Sorvete 1 bola", obs: "copo", price: 4.00, category: "Sorvetes e Gelados", image: ImgSorvete, description: "Sorvete artesanal cremoso servido em copo. Escolha seu sabor e a calda que preferir!", flavors: SORVETE_FLAVORS, calda: SORVETE_CALDA },
+          { id: 2, name: "Sorvete 2 bolas", obs: "casquinha", price: 9.00, category: "Sorvetes e Gelados", image: ImgSorvete, description: "Duas bolas de sorvete artesanal na casquinha crocante. Escolha o sabor e a calda!", flavors: SORVETE_FLAVORS, calda: SORVETE_CALDA },
+          { id: 3, name: "Sorvete 2 bolas", obs: "copo", price: 8.00, category: "Sorvetes e Gelados", image: ImgSorvete, description: "Duas bolas de sorvete artesanal servido em copo. Escolha o sabor e a calda!", flavors: SORVETE_FLAVORS, calda: SORVETE_CALDA },
+          { id: 4, name: "Sorvete 3 bolas", obs: "copo", price: 11.00, category: "Sorvetes e Gelados", image: ImgSorvete, description: "Três bolas de sorvete artesanal servido em copo. Escolha o sabor e a calda!", flavors: SORVETE_FLAVORS, calda: SORVETE_CALDA },
+          { id: 5, name: "Sorvete meio litro", obs: null, price: 18.00, category: "Sorvetes e Gelados", image: ImgSorvete, description: "Sorvete artesanal meio litro, ideal para compartilhar. Disponível em 23 sabores!", flavors: SORVETE_FLAVORS, calda: SORVETE_CALDA },
+          { id: 6, name: "Sorvete 1 litro", obs: null, price: 29.00, category: "Sorvetes e Gelados", image: ImgSorvete, description: "Sorvete artesanal 1 litro, perfeito para a família. Escolha entre 23 sabores incríveis!", flavors: SORVETE_FLAVORS, calda: SORVETE_CALDA },
+          { id: 7, name: "Trufa", obs: "unidade", price: 3.00, category: "Sorvetes e Gelados", image: ImgTrufa, description: "Trufa artesanal cremosa e irresistível, feita com os melhores ingredientes.", flavors: TRUFA_FLAVORS },
         ],
         acaiMilkshake: [
-          { id: 8, name: "Milk-shake", obs: "250 ml", price: 10.00, category: "Açaí e Milk-shake", image: ImgMilkshake },
-          { id: 9, name: "Milk-shake", obs: "300 ml", price: 12.00, category: "Açaí e Milk-shake", image: ImgMilkshake },
-          { id: 10, name: "Milk-shake", obs: "400 ml", price: 13.00, category: "Açaí e Milk-shake", image: ImgMilkshake },
-          { id: 11, name: "Milk-shake", obs: "500 ml", price: 15.00, category: "Açaí e Milk-shake", image: ImgMilkshake },
-          { id: 12, name: "Milk-shake", obs: "770 ml", price: 20.00, category: "Açaí e Milk-shake", image: ImgMilkshake },
-          { id: 13, name: "Açaí", obs: "250 ml", price: 8.00, category: "Açaí e Milk-shake", image: ImgAcai },
-          { id: 14, name: "Açaí", obs: "300 ml", price: 10.00, category: "Açaí e Milk-shake", image: ImgAcai },
-          { id: 15, name: "Açaí", obs: "400 ml", price: 12.00, category: "Açaí e Milk-shake", image: ImgAcai },
-          { id: 16, name: "Açaí", obs: "500 ml", price: 15.00, category: "Açaí e Milk-shake", image: ImgAcai },
-          { id: 17, name: "Açaí", obs: "770 ml", price: 18.00, category: "Açaí e Milk-shake", image: ImgAcai },
-          { id: 18, name: "Açaí", obs: "1 litro", price: 23.00, category: "Açaí e Milk-shake", image: ImgAcai },
-          { id: 19, name: "Açaí de pote", obs: "900 ml", price: 18.00, category: "Açaí e Milk-shake", image: ImgAcai },
+          { id: 8, name: "Milk-shake", obs: "250 ml", price: 10.00, category: "Açaí e Milk-shake", image: ImgMilkshake, description: "Milk-shake cremoso e gelado batido na hora. Escolha o sabor que mais te agrada!", flavors: MILKSHAKE_FLAVORS },
+          { id: 9, name: "Milk-shake", obs: "300 ml", price: 12.00, category: "Açaí e Milk-shake", image: ImgMilkshake, description: "Milk-shake cremoso e gelado batido na hora. Escolha o sabor que mais te agrada!", flavors: MILKSHAKE_FLAVORS },
+          { id: 10, name: "Milk-shake", obs: "400 ml", price: 13.00, category: "Açaí e Milk-shake", image: ImgMilkshake, description: "Milk-shake cremoso e gelado batido na hora. Escolha o sabor que mais te agrada!", flavors: MILKSHAKE_FLAVORS },
+          { id: 11, name: "Milk-shake", obs: "500 ml", price: 15.00, category: "Açaí e Milk-shake", image: ImgMilkshake, description: "Milk-shake cremoso e gelado batido na hora. Escolha o sabor que mais te agrada!", flavors: MILKSHAKE_FLAVORS },
+          { id: 12, name: "Milk-shake", obs: "770 ml", price: 20.00, category: "Açaí e Milk-shake", image: ImgMilkshake, description: "Milk-shake cremoso e gelado batido na hora. Escolha o sabor que mais te agrada!", flavors: MILKSHAKE_FLAVORS },
+          { id: 13, name: "Açaí", obs: "250 ml", price: 8.00, category: "Açaí e Milk-shake", image: ImgAcai, description: "Açaí puro e cremoso. Inclui 2 frutas — adicione mais por apenas R$1,00 cada!", fruits: ACAI_FRUITS, includedFruits: 2, extraFruitPrice: 1.00, addons: ACAI_ADDONS },
+          { id: 14, name: "Açaí", obs: "300 ml", price: 10.00, category: "Açaí e Milk-shake", image: ImgAcai, description: "Açaí puro e cremoso. Inclui 2 frutas — adicione mais por apenas R$1,00 cada!", fruits: ACAI_FRUITS, includedFruits: 2, extraFruitPrice: 1.00, addons: ACAI_ADDONS },
+          { id: 15, name: "Açaí", obs: "400 ml", price: 12.00, category: "Açaí e Milk-shake", image: ImgAcai, description: "Açaí puro e cremoso. Inclui 2 frutas — adicione mais por apenas R$1,00 cada!", fruits: ACAI_FRUITS, includedFruits: 2, extraFruitPrice: 1.00, addons: ACAI_ADDONS },
+          { id: 16, name: "Açaí", obs: "500 ml", price: 15.00, category: "Açaí e Milk-shake", image: ImgAcai, description: "Açaí puro e cremoso. Inclui 2 frutas — adicione mais por apenas R$1,00 cada!", fruits: ACAI_FRUITS, includedFruits: 2, extraFruitPrice: 1.00, addons: ACAI_ADDONS },
+          { id: 17, name: "Açaí", obs: "770 ml", price: 18.00, category: "Açaí e Milk-shake", image: ImgAcai, description: "Açaí puro e cremoso. Inclui 2 frutas — adicione mais por apenas R$1,00 cada!", fruits: ACAI_FRUITS, includedFruits: 2, extraFruitPrice: 1.00, addons: ACAI_ADDONS },
+          { id: 18, name: "Açaí", obs: "1 litro", price: 23.00, category: "Açaí e Milk-shake", image: ImgAcai, description: "Açaí puro 1 litro, ideal para compartilhar. Inclui 2 frutas — adicione mais por R$1,00 cada!", fruits: ACAI_FRUITS, includedFruits: 2, extraFruitPrice: 1.00, addons: ACAI_ADDONS },
+          { id: 19, name: "Açaí de pote", obs: "900 ml", price: 18.00, category: "Açaí e Milk-shake", image: ImgAcai, description: "Açaí de pote 900 ml para curtir em casa. Inclui 2 frutas — adicione mais por R$1,00 cada!", fruits: ACAI_FRUITS, includedFruits: 2, extraFruitPrice: 1.00, addons: ACAI_ADDONS },
         ],
         lanches: [
-          { id: 20, name: "Cachorro quente (carne)", obs: null, price: 8.00, category: "Lanches e Pratos", image: ImgCachorroQuente },
-          { id: 21, name: "Cachorro quente (frango)", obs: null, price: 9.00, category: "Lanches e Pratos", image: ImgCachorroQuente },
-          { id: 22, name: "Misto", obs: null, price: 7.00, category: "Lanches e Pratos", image: ImgMisto },
-          { id: 23, name: "Hamburguer simples", obs: null, price: 13.00, category: "Lanches e Pratos", image: ImgHamburguer },
-          { id: 24, name: "Tapioca", obs: "P", price: 8.00, category: "Lanches e Pratos", image: ImgTapioca },
-          { id: 25, name: "Tapioca", obs: "M", price: 11.00, category: "Lanches e Pratos", image: ImgTapioca },
-          { id: 26, name: "Tapioca", obs: "G", price: 15.00, category: "Lanches e Pratos", image: ImgTapioca },
-          { id: 27, name: "Cuscuz recheado", obs: null, price: 13.00, category: "Lanches e Pratos", image: ImgCuscuz },
+          { id: 20, name: "Cachorro quente (carne)", obs: null, price: 8.00, category: "Lanches e Pratos", image: ImgCachorroQuente, description: "Cachorro quente com salsicha bovina, pão macio e molhos especiais da casa." },
+          { id: 21, name: "Cachorro quente (frango)", obs: null, price: 9.00, category: "Lanches e Pratos", image: ImgCachorroQuente, description: "Cachorro quente com frango desfiado temperado, pão macio e molhos especiais da casa." },
+          { id: 22, name: "Misto", obs: null, price: 7.00, category: "Lanches e Pratos", image: ImgMisto, description: "Sanduíche misto quentinho com pão de forma grelhado, presunto e queijo derretido." },
+          { id: 23, name: "Hamburguer simples", obs: null, price: 13.00, category: "Lanches e Pratos", image: ImgHamburguer, description: "Hambúrguer artesanal com queijo cheddar, carne suculenta, presunto, tomate, alface e cebola." },
+          { id: 24, name: "Tapioca", obs: "P", price: 8.00, category: "Lanches e Pratos", image: ImgTapioca, description: "Tapioca fresquinha feita na hora. Escolha 1 sabor entre salgados ou doces.", flavorCategories: TAPIOCA_FLAVOR_CATEGORIES, maxFlavors: 1 },
+          { id: 25, name: "Tapioca", obs: "M", price: 11.00, category: "Lanches e Pratos", image: ImgTapioca, description: "Tapioca fresquinha feita na hora. Escolha até 2 sabores entre salgados ou doces.", flavorCategories: TAPIOCA_FLAVOR_CATEGORIES, maxFlavors: 2 },
+          { id: 26, name: "Tapioca", obs: "G", price: 15.00, category: "Lanches e Pratos", image: ImgTapioca, description: "Tapioca fresquinha feita na hora. Escolha até 3 sabores entre salgados ou doces.", flavorCategories: TAPIOCA_FLAVOR_CATEGORIES, maxFlavors: 3 },
+          { id: 27, name: "Cuscuz recheado", obs: null, price: 13.00, category: "Lanches e Pratos", image: ImgCuscuz, description: "Cuscuz nordestino caprichado e recheado com ingredientes saborosos, feito com carinho." },
         ],
         salgadinhos: [
           { id: 28, name: "Gravata", obs: "30 g", price: 2.00, category: "Salgadinhos e Pipocas", image: null },
@@ -112,32 +140,32 @@ const Data = [
           { id: 41, name: "Pipoca estourada", obs: null, price: 8.00, category: "Salgadinhos e Pipocas", image: null },
         ],
         saladaFrutas: [
-          { id: 42, name: "Salada de frutas", obs: "250 ml", price: 6.00, category: "Salada de Frutas e Doces", image: ImgSaladaFrutas },
-          { id: 43, name: "Salada de frutas", obs: "300 ml", price: 7.00, category: "Salada de Frutas e Doces", image: ImgSaladaFrutas },
-          { id: 44, name: "Salada de frutas", obs: "400 ml", price: 8.00, category: "Salada de Frutas e Doces", image: ImgSaladaFrutas },
-          { id: 45, name: "Salada de frutas", obs: "500 ml", price: 10.00, category: "Salada de Frutas e Doces", image: ImgSaladaFrutas },
-          { id: 46, name: "Salada de frutas", obs: "770 ml", price: 13.00, category: "Salada de Frutas e Doces", image: ImgSaladaFrutas },
+          { id: 42, name: "Salada de frutas", obs: "250 ml", price: 6.00, category: "Salada de Frutas e Doces", image: ImgSaladaFrutas, description: "Salada de frutas frescas e geladas, preparada com frutas selecionadas da estação." },
+          { id: 43, name: "Salada de frutas", obs: "300 ml", price: 7.00, category: "Salada de Frutas e Doces", image: ImgSaladaFrutas, description: "Salada de frutas frescas e geladas, preparada com frutas selecionadas da estação." },
+          { id: 44, name: "Salada de frutas", obs: "400 ml", price: 8.00, category: "Salada de Frutas e Doces", image: ImgSaladaFrutas, description: "Salada de frutas frescas e geladas, preparada com frutas selecionadas da estação." },
+          { id: 45, name: "Salada de frutas", obs: "500 ml", price: 10.00, category: "Salada de Frutas e Doces", image: ImgSaladaFrutas, description: "Salada de frutas frescas e geladas, preparada com frutas selecionadas da estação." },
+          { id: 46, name: "Salada de frutas", obs: "770 ml", price: 13.00, category: "Salada de Frutas e Doces", image: ImgSaladaFrutas, description: "Salada de frutas frescas e geladas, preparada com frutas selecionadas da estação." },
         ],
         bebidasQuentes: [
-          { id: 47, name: "Chocolate quente", obs: "250 ml", price: 6.00, category: "Bebidas Quentes", image: ImgChocolateQuente },
-          { id: 48, name: "Chocolate quente", obs: "300 ml", price: 8.00, category: "Bebidas Quentes", image: ImgChocolateQuente },
-          { id: 49, name: "Chocolate quente", obs: "400 ml", price: 10.00, category: "Bebidas Quentes", image: ImgChocolateQuente },
-          { id: 50, name: "Chocolate quente", obs: "500 ml", price: 12.00, category: "Bebidas Quentes", image: ImgChocolateQuente },
-          { id: 51, name: "Chocolate quente", obs: "770 ml", price: 17.00, category: "Bebidas Quentes", image: ImgChocolateQuente },
-          { id: 52, name: "Café", obs: "250 ml", price: 4.00, category: "Bebidas Quentes", image: ImgCafe },
-          { id: 53, name: "Cappuccino", obs: "250 ml", price: 6.00, category: "Bebidas Quentes", image: ImgCafe },
-          { id: 54, name: "Suco natural - Maracujá", obs: "300 ml", price: 6.00, category: "Bebidas Quentes", image: ImgSucoNatural },
-          { id: 55, name: "Suco natural - Acerola", obs: "300 ml", price: 5.00, category: "Bebidas Quentes", image: ImgSucoNatural },
-          { id: 56, name: "Suco natural - Graviola", obs: "300 ml", price: 5.00, category: "Bebidas Quentes", image: ImgSucoNatural },
-          { id: 57, name: "Suco natural - Cajá", obs: "300 ml", price: 5.00, category: "Bebidas Quentes", image: ImgSucoNatural },
-          { id: 58, name: "Suco natural - Caju", obs: "300 ml", price: 5.00, category: "Bebidas Quentes", image: ImgSucoNatural },
-          { id: 59, name: "Suco natural - Umbu", obs: "300 ml", price: 5.00, category: "Bebidas Quentes", image: ImgSucoNatural },
-          { id: 60, name: "Suco natural - Maracujá com leite", obs: "300 ml", price: 7.00, category: "Bebidas Quentes", image: ImgSucoNatural },
-          { id: 61, name: "Suco natural - Acerola com leite", obs: "300 ml", price: 6.00, category: "Bebidas Quentes", image: ImgSucoNatural },
-          { id: 62, name: "Suco natural - Graviola com leite", obs: "300 ml", price: 6.00, category: "Bebidas Quentes", image: ImgSucoNatural },
-          { id: 63, name: "Suco natural - Cajá com leite", obs: "300 ml", price: 6.00, category: "Bebidas Quentes", image: ImgSucoNatural },
-          { id: 64, name: "Suco natural - Caju com leite", obs: "300 ml", price: 6.00, category: "Bebidas Quentes", image: ImgSucoNatural },
-          { id: 65, name: "Suco natural - Umbu com leite", obs: "300 ml", price: 6.00, category: "Bebidas Quentes", image: ImgSucoNatural },
+          { id: 47, name: "Chocolate quente", obs: "250 ml", price: 6.00, category: "Bebidas Quentes", image: ImgChocolateQuente, description: "Chocolate quente cremoso e quentinho, feito com cacau selecionado. Perfeito para qualquer momento!" },
+          { id: 48, name: "Chocolate quente", obs: "300 ml", price: 8.00, category: "Bebidas Quentes", image: ImgChocolateQuente, description: "Chocolate quente cremoso e quentinho, feito com cacau selecionado. Perfeito para qualquer momento!" },
+          { id: 49, name: "Chocolate quente", obs: "400 ml", price: 10.00, category: "Bebidas Quentes", image: ImgChocolateQuente, description: "Chocolate quente cremoso e quentinho, feito com cacau selecionado. Perfeito para qualquer momento!" },
+          { id: 50, name: "Chocolate quente", obs: "500 ml", price: 12.00, category: "Bebidas Quentes", image: ImgChocolateQuente, description: "Chocolate quente cremoso e quentinho, feito com cacau selecionado. Perfeito para qualquer momento!" },
+          { id: 51, name: "Chocolate quente", obs: "770 ml", price: 17.00, category: "Bebidas Quentes", image: ImgChocolateQuente, description: "Chocolate quente cremoso e quentinho, feito com cacau selecionado. Perfeito para qualquer momento!" },
+          { id: 52, name: "Café", obs: "250 ml", price: 4.00, category: "Bebidas Quentes", image: ImgCafe, description: "Café fresquinho e aromático, preparado na hora com grãos selecionados." },
+          { id: 53, name: "Cappuccino", obs: "250 ml", price: 6.00, category: "Bebidas Quentes", image: ImgCafe, description: "Cappuccino cremoso com espuma de leite e toque de canela, uma experiência especial." },
+          { id: 54, name: "Suco natural - Maracujá", obs: "300 ml", price: 6.00, category: "Bebidas Quentes", image: ImgSucoNatural, description: "Suco natural de maracujá feito na hora, puro e sem conservantes. Refrescante e saboroso!" },
+          { id: 55, name: "Suco natural - Acerola", obs: "300 ml", price: 5.00, category: "Bebidas Quentes", image: ImgSucoNatural, description: "Suco natural de acerola feito na hora, rico em vitamina C. Puro e sem conservantes!" },
+          { id: 56, name: "Suco natural - Graviola", obs: "300 ml", price: 5.00, category: "Bebidas Quentes", image: ImgSucoNatural, description: "Suco natural de graviola feito na hora, puro e sem conservantes. Sabor único e tropical!" },
+          { id: 57, name: "Suco natural - Cajá", obs: "300 ml", price: 5.00, category: "Bebidas Quentes", image: ImgSucoNatural, description: "Suco natural de cajá feito na hora, puro e sem conservantes. O sabor do nordeste!" },
+          { id: 58, name: "Suco natural - Caju", obs: "300 ml", price: 5.00, category: "Bebidas Quentes", image: ImgSucoNatural, description: "Suco natural de caju feito na hora, puro e sem conservantes. Fresco e delicioso!" },
+          { id: 59, name: "Suco natural - Umbu", obs: "300 ml", price: 5.00, category: "Bebidas Quentes", image: ImgSucoNatural, description: "Suco natural de umbu feito na hora, puro e sem conservantes. Sabor genuinamente nordestino!" },
+          { id: 60, name: "Suco natural - Maracujá com leite", obs: "300 ml", price: 7.00, category: "Bebidas Quentes", image: ImgSucoNatural, description: "Suco cremoso de maracujá com leite, batido na hora. Puro e sem conservantes!" },
+          { id: 61, name: "Suco natural - Acerola com leite", obs: "300 ml", price: 6.00, category: "Bebidas Quentes", image: ImgSucoNatural, description: "Suco cremoso de acerola com leite, batido na hora. Rico em vitamina C!" },
+          { id: 62, name: "Suco natural - Graviola com leite", obs: "300 ml", price: 6.00, category: "Bebidas Quentes", image: ImgSucoNatural, description: "Suco cremoso de graviola com leite, batido na hora. Sabor tropical e cremoso!" },
+          { id: 63, name: "Suco natural - Cajá com leite", obs: "300 ml", price: 6.00, category: "Bebidas Quentes", image: ImgSucoNatural, description: "Suco cremoso de cajá com leite, batido na hora. O sabor do nordeste com cremosidade!" },
+          { id: 64, name: "Suco natural - Caju com leite", obs: "300 ml", price: 6.00, category: "Bebidas Quentes", image: ImgSucoNatural, description: "Suco cremoso de caju com leite, batido na hora. Fresco, cremoso e delicioso!" },
+          { id: 65, name: "Suco natural - Umbu com leite", obs: "300 ml", price: 6.00, category: "Bebidas Quentes", image: ImgSucoNatural, description: "Suco cremoso de umbu com leite, batido na hora. Sabor nordestino com toque cremoso!" },
         ],
         bebidasGeladas: [
           { id: 66, name: "Água", obs: "500 ml", price: 2.00, category: "Bebidas Geladas", image: ImgAgua },

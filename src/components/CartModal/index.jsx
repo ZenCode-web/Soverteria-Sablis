@@ -17,7 +17,7 @@ const CartModal = () => {
 
             <div className="fixed right-0 top-0 h-full w-full max-w-sm bg-background z-50 flex flex-col shadow-2xl">
 
-                <div className="bg-header px-5 py-4 flex items-center justify-between flex-shrink-0">
+                <div className="bg-header px-5 py-4 flex items-center justify-between shrink-0">
                     <h2 className="text-secondary font-display font-bold text-xl">Seu Carrinho</h2>
                     <button
                         onClick={() => setIsCartOpen(false)}
@@ -35,8 +35,8 @@ const CartModal = () => {
                         </div>
                     ) : (
                         cart.map(item => (
-                            <div key={item.id} className="flex items-center gap-3 bg-surface rounded-2xl p-3">
-                                <div className="w-16 h-16 rounded-xl bg-background flex items-center justify-center flex-shrink-0">
+                            <div key={item.cartKey} className="flex items-center gap-3 bg-surface rounded-2xl p-3">
+                                <div className="w-16 h-16 rounded-xl bg-background flex items-center justify-center shrink-0">
                                     {item.image ? (
                                         <img src={item.image} alt={item.name} className="w-14 h-14 object-contain" />
                                     ) : (
@@ -48,13 +48,31 @@ const CartModal = () => {
                                     <p className="font-main font-bold text-header text-xs line-clamp-1">
                                         {item.name}{item.obs && ` - ${item.obs}`}
                                     </p>
+                                    {item.flavor && (
+                                        <p className="font-main text-header/60 text-xs mt-0.5">Sabor: {item.flavor}</p>
+                                    )}
+                                    {item.calda && (
+                                        <p className="font-main text-header/60 text-xs mt-0.5">Calda: {item.calda}</p>
+                                    )}
+                                    {item.selectedFlavors?.length > 0 && (
+                                        <p className="font-main text-header/60 text-xs mt-0.5">Recheio: {item.selectedFlavors.join(", ")}</p>
+                                    )}
+                                    {item.selectedFruits?.length > 0 && (
+                                        <p className="font-main text-header/60 text-xs mt-0.5">Frutas: {item.selectedFruits.join(", ")}</p>
+                                    )}
+                                    {item.selectedAddons?.length > 0 && (
+                                        <p className="font-main text-header/60 text-xs mt-0.5">Adicionais: {item.selectedAddons.join(", ")}</p>
+                                    )}
+                                    {item.notes && (
+                                        <p className="font-main text-header/50 text-xs mt-0.5 italic line-clamp-1">"{item.notes}"</p>
+                                    )}
                                     <p className="font-main font-semibold text-primary text-sm mt-0.5">
                                         R$ {(item.price * item.quantity).toFixed(2).replace(".", ",")}
                                     </p>
 
                                     <div className="flex items-center gap-2 mt-2">
                                         <button
-                                            onClick={() => updateQuantity(item.id, -1)}
+                                            onClick={() => updateQuantity(item.cartKey, -1)}
                                             className="w-6 h-6 rounded-full bg-accent text-secondary flex items-center justify-center hover:opacity-80 active:scale-95 transition-all cursor-pointer"
                                         >
                                             <FiMinus size={10} />
@@ -63,7 +81,7 @@ const CartModal = () => {
                                             {item.quantity}
                                         </span>
                                         <button
-                                            onClick={() => updateQuantity(item.id, 1)}
+                                            onClick={() => updateQuantity(item.cartKey, 1)}
                                             className="w-6 h-6 rounded-full bg-accent text-secondary flex items-center justify-center hover:opacity-80 active:scale-95 transition-all cursor-pointer"
                                         >
                                             <FiPlus size={10} />
@@ -72,8 +90,8 @@ const CartModal = () => {
                                 </div>
 
                                 <button
-                                    onClick={() => removeFromCart(item.id)}
-                                    className="text-red-400 hover:text-red-600 transition-colors flex-shrink-0 cursor-pointer"
+                                    onClick={() => removeFromCart(item.cartKey)}
+                                    className="text-red-400 hover:text-red-600 transition-colors shrink-0 cursor-pointer"
                                 >
                                     <FiTrash2 size={16} />
                                 </button>
@@ -83,7 +101,7 @@ const CartModal = () => {
                 </div>
 
                 {cart.length > 0 && (
-                    <div className="border-t border-surface px-5 py-4 flex flex-col gap-3 flex-shrink-0">
+                    <div className="border-t border-surface px-5 py-4 flex flex-col gap-3 shrink-0">
                         <div className="flex items-center justify-between">
                             <span className="font-main font-semibold text-header">Total</span>
                             <span className="font-main font-bold text-primary text-lg">

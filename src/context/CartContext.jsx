@@ -7,25 +7,35 @@ export function CartProvider({ children }) {
     const [isCartOpen, setIsCartOpen] = useState(false)
 
     function addToCart(product) {
+        const cartKey = [
+            product.id,
+            product.flavor || "",
+            product.calda || "",
+            [...(product.selectedFlavors || [])].sort().join(","),
+            [...(product.selectedFruits || [])].sort().join(","),
+            [...(product.selectedAddons || [])].sort().join(","),
+        ].join("|")
+        const qty = product.quantity || 1
+
         setCart(prev => {
-            const existing = prev.find(item => item.id === product.id)
+            const existing = prev.find(item => item.cartKey === cartKey)
             if (existing) {
                 return prev.map(item =>
-                    item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+                    item.cartKey === cartKey ? { ...item, quantity: item.quantity + qty } : item
                 )
             }
-            return [...prev, { ...product, quantity: 1 }]
+            return [...prev, { ...product, cartKey, quantity: qty }]
         })
     }
 
-    function removeFromCart(id) {
-        setCart(prev => prev.filter(item => item.id !== id))
+    function removeFromCart(cartKey) {
+        setCart(prev => prev.filter(item => item.cartKey !== cartKey))
     }
 
-    function updateQuantity(id, delta) {
+    function updateQuantity(cartKey, delta) {
         setCart(prev =>
             prev.reduce((acc, item) => {
-                if (item.id !== id) return [...acc, item]
+                if (item.cartKey !== cartKey) return [...acc, item]
                 const newQty = item.quantity + delta
                 if (newQty <= 0) return acc
                 return [...acc, { ...item, quantity: newQty }]
