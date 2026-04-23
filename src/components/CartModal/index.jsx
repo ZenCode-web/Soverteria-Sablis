@@ -55,7 +55,7 @@ const CartModal = () => {
                                         <p className="font-main text-header/60 text-xs mt-0.5">Calda: {item.calda}</p>
                                     )}
                                     {item.selectedFlavors?.length > 0 && (
-                                        <p className="font-main text-header/60 text-xs mt-0.5">Recheio: {item.selectedFlavors.join(", ")}</p>
+                                        <p className="font-main text-header/60 text-xs mt-0.5">{item.category === "Lanches e Pratos" ? "Recheio" : "Sabor(es)"}: {item.selectedFlavors.join(", ")}</p>
                                     )}
                                     {item.selectedFruits?.length > 0 && (
                                         <p className="font-main text-header/60 text-xs mt-0.5">Frutas: {item.selectedFruits.join(", ")}</p>

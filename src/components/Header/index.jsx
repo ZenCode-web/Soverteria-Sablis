@@ -4,6 +4,7 @@ import Img from "../ImgTag"
 import P from "../P"
 import CartModal from "../CartModal"
 import { useCart } from "../../context/CartContext"
+import { Link } from "react-router-dom"
 
 const Header = () => {
 
@@ -20,9 +21,11 @@ const Header = () => {
            <div className="flex items-center ">
 
                 <div>
-                   {imagemLogo.map(({src, alt}, index) => (
+                  <Link to="/">
+                        {imagemLogo.map(({src, alt}, index) => (
                     <Img className="w-18 lg:w-22" key={index} src={src} alt={alt} />
                    ))}
+                  </Link>
                 </div>
 
                 <div className="flex flex-col gap-0 leading-none">

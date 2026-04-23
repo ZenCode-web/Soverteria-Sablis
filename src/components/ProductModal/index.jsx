@@ -14,7 +14,8 @@ const ProductModal = ({ product, onClose }) => {
     const [selectedAddons, setSelectedAddons] = useState([])
     const [notes, setNotes] = useState("")
 
-    const hasFlavors = product.flavors?.length > 0
+    const hasMultiFlavors = product.flavors?.length > 0 && (product.maxFlavors > 1)
+    const hasFlavors = product.flavors?.length > 0 && !hasMultiFlavors
     const hasCalda = product.calda?.length > 0
     const hasFlavorCategories = product.flavorCategories?.length > 0
     const hasFruits = product.fruits?.length > 0
@@ -32,6 +33,7 @@ const ProductModal = ({ product, onClose }) => {
 
     const isValid =
         (!hasFlavors || !!selectedFlavor) &&
+        (!hasMultiFlavors || selectedFlavors.length > 0) &&
         (!hasFlavorCategories || selectedFlavors.length > 0)
 
     const selectedCategory = hasFlavorCategories && selectedFlavors.length > 0
@@ -136,6 +138,48 @@ const ProductModal = ({ product, onClose }) => {
                                             {flavor}
                                         </button>
                                     ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Sabores múltiplos (sorvete 2 e 3 bolas) */}
+                        {hasMultiFlavors && (
+                            <div>
+                                <div className="flex items-center justify-between mb-3">
+                                    <p className="font-main font-bold text-header text-sm">
+                                        Escolha os sabores <span className="text-red-500">*</span>
+                                    </p>
+                                    <span className={`text-xs font-main font-semibold px-2 py-0.5 rounded-full ${
+                                        selectedFlavors.length >= product.maxFlavors
+                                            ? "bg-accent text-secondary"
+                                            : "bg-surface text-header/60"
+                                    }`}>
+                                        {selectedFlavors.length}/{product.maxFlavors}
+                                    </span>
+                                </div>
+                                <div className="flex flex-wrap gap-2">
+                                    {product.flavors.map(flavor => {
+                                        const selected = selectedFlavors.includes(flavor)
+                                        const atLimit = selectedFlavors.length >= product.maxFlavors
+                                        return (
+                                            <button
+                                                key={flavor}
+                                                onClick={() => setSelectedFlavors(prev =>
+                                                    prev.includes(flavor)
+                                                        ? prev.filter(f => f !== flavor)
+                                                        : atLimit ? prev : [...prev, flavor]
+                                                )}
+                                                disabled={!selected && atLimit}
+                                                className={`px-3 py-1.5 rounded-full text-xs font-main font-semibold border-2 transition-all cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed ${
+                                                    selected
+                                                        ? "bg-accent border-accent text-secondary"
+                                                        : "bg-background border-surface text-header hover:border-accent"
+                                                }`}
+                                            >
+                                                {flavor}
+                                            </button>
+                                        )
+                                    })}
                                 </div>
                             </div>
                         )}
@@ -285,7 +329,7 @@ const ProductModal = ({ product, onClose }) => {
                             <textarea
                                 value={notes}
                                 onChange={e => setNotes(e.target.value)}
-                                placeholder="Ex: sem salada, molho à parte..."
+                                placeholder="Ex: Algo que você queria tirar do lanche..."
                                 rows={3}
                                 className="w-full rounded-2xl border-2 border-surface bg-surface px-4 py-3 font-main text-sm text-header placeholder-header/40 focus:outline-none focus:border-accent resize-none"
                             />
