@@ -24,6 +24,7 @@ import ImgHamburguer from "../assets/imgs/hamburguer-simples.png"
 import ImgCuscuz from "../assets/imgs/cuscuz-recheado.png"
 import ImgSaladaFrutas from "../assets/imgs/salada-de-frutas.png"
 import ImgChocolateQuente from "../assets/imgs/chocolate-quente.png"
+import ImgChocolateCopo from "../assets/imgs/chocolanteQuente.png"
 import ImgCafe from "../assets/imgs/cafe.png"
 import ImgSucoNatural from "../assets/imgs/suco-natural.png"
 import ImgAgua from "../assets/imgs/agua-500ml.png"
@@ -38,6 +39,19 @@ import ImgSucoDelValle from "../assets/imgs/suco-del-valle-450ml.png"
 import ImgMonster from "../assets/imgs/monster-473ml.png"
 import ImgMisto from "../assets/imgs/misto.png"
 import ImgTapioca from "../assets/imgs/tapioca.png"
+import ImgGravata from "../assets/imgs/gravata.png"
+import ImgReizinho from "../assets/imgs/reizinho.png"
+import ImgFandangos from "../assets/imgs/Fandagos-removebg-preview.png"
+import ImgCebolitos from "../assets/imgs/cebolito.png"
+import ImgCheetos from "../assets/imgs/chitos-removebg-preview.png"
+import ImgRuffles from "../assets/imgs/rufus-removebg-preview.png"
+import ImgDoritos from "../assets/imgs/doritos-removebg-preview.png"
+import ImgSensacoes from "../assets/imgs/sensacao-removebg-preview.png"
+import ImgTreloso from "../assets/imgs/Treloso-removebg-preview.png"
+import ImgPipoca from "../assets/imgs/pipoca.png"
+import ImgPipocaEstourada from "../assets/imgs/pipocaEstorada.png"
+import ImgRedBull from "../assets/imgs/redBull.png"
+import ImgTNT from "../assets/imgs/tnt.png"
 
 const SORVETE_FLAVORS = [
     "Chocolate", "Morango", "Açaí com leite condensado", "Flocos",
@@ -61,7 +75,11 @@ const TAPIOCA_FLAVOR_CATEGORIES = [
     { label: "Doces", options: ["Chocolate", "Morango", "Leite condensado", "Romeu e Julieta", "Coco"] }
 ]
 
+const TRELOSO_FLAVORS = ["Morango", "Chocolate", "Brigadeiro", "Flocos", "Doce de leite"]
+
 const ACAI_FRUITS = ["Banana", "Morango", "Uva", "Kiwi"]
+
+const SALADA_COMPLEMENTOS = ["Leite condensado", "Leite em pó", "Granola", "Farinha de amendoim"]
 
 const ACAI_ADDONS = [
     { name: "M&M's", price: 1.00 }
@@ -101,7 +119,7 @@ const Data = [
           { id: 2, name: "Sorvete 2 bolas", obs: "casquinha", price: 9.00, category: "Sorvetes e Gelados", image: ImgSovete2Cascinha, description: "Duas bolas de sorvete artesanal na casquinha crocante. Escolha até 2 sabores e a calda!", flavors: SORVETE_FLAVORS, maxFlavors: 2, calda: SORVETE_CALDA },
           { id: 3, name: "Sorvete 2 bolas", obs: "copo", price: 8.00, category: "Sorvetes e Gelados", image:  ImgSovete2Copo, description: "Duas bolas de sorvete artesanal servido em copo. Escolha até 2 sabores e a calda!", flavors: SORVETE_FLAVORS, maxFlavors: 2, calda: SORVETE_CALDA },
           { id: 4, name: "Sorvete 3 bolas", obs: "copo", price: 11.00, category: "Sorvetes e Gelados", image: ImgSovete3Copo, description: "Três bolas de sorvete artesanal servido em copo. Escolha até 3 sabores e a calda!", flavors: SORVETE_FLAVORS, maxFlavors: 3, calda: SORVETE_CALDA },
-          { id: 5, name: "Sorvete meio litro", obs: null, price: 18.00, category: "Sorvetes e Gelados", image: ImgSoveteMeioLitro, description: "Sorvete artesanal meio litro, ideal para compartilhar. Disponível em 23 sabores!", flavors: SORVETE_FLAVORS, calda: SORVETE_CALDA },
+          { id: 5, name: "Sorvete de 750ml", obs: null, price: 23.00, category: "Sorvetes e Gelados", image: ImgSoveteMeioLitro, description: "Sorvete artesanal meio litro, ideal para compartilhar. Disponível em 23 sabores!", flavors: SORVETE_FLAVORS, calda: SORVETE_CALDA },
           { id: 6, name: "Sorvete 1 litro", obs: null, price: 29.00, category: "Sorvetes e Gelados", image: ImgSorvete, description: "Sorvete artesanal 1 litro, perfeito para a família. Escolha entre 23 sabores incríveis!", flavors: SORVETE_FLAVORS, calda: SORVETE_CALDA },
           { id: 7, name: "Trufa", obs: "unidade", price: 3.00, category: "Sorvetes e Gelados", image: ImgTrufa, description: "Trufa artesanal cremosa e irresistível, feita com os melhores ingredientes.", flavors: TRUFA_FLAVORS },
         ],
@@ -120,44 +138,45 @@ const Data = [
           { id: 19, name: "Açaí de pote", obs: "900 ml", price: 18.00, category: "Açaí e Milk-shake", image: ImgAcai, description: "Açaí de pote 900 ml para curtir em casa. Inclui 2 frutas — adicione mais por R$1,00 cada!", fruits: ACAI_FRUITS, includedFruits: 2, extraFruitPrice: 1.00, addons: ACAI_ADDONS },
         ],
         lanches: [
-          { id: 20, name: "Cachorro quente (carne)", obs: null, price: 8.00, category: "Lanches e Pratos", image: ImgCachorroQuente, description: "Cachorro quente com salsicha bovina, pão macio e molhos especiais da casa." },
-          { id: 21, name: "Cachorro quente (frango)", obs: null, price: 9.00, category: "Lanches e Pratos", image: ImgCachorroQuente, description: "Cachorro quente com frango desfiado temperado, pão macio e molhos especiais da casa." },
-          { id: 22, name: "Misto", obs: null, price: 7.00, category: "Lanches e Pratos", image: ImgMisto, description: "Sanduíche misto quentinho com pão de forma grelhado, presunto e queijo derretido." },
+          { id: 20, name: "Cachorro quente", obs: "Salsicha", price: 8.00, category: "Lanches e Pratos", image: ImgCachorroQuente, description: "Salsicha, salada, queijo ralado, maionese caseira e batata palha." },
+          { id: 20.1, name: "Cachorro quente", obs: "Calabresa", price: 11.00, category: "Lanches e Pratos", image: ImgCachorroQuente, description: "Carne, calabresa, salada, queijo ralado, maionese e batata palha." },
+          { id: 21, name: "Cachorro quente (frango)", obs: null, price: 9.00, category: "Lanches e Pratos", image: ImgCachorroQuente, description: "Frango, salsicha, salada, maionese, queijo ralado, batata palha. Feito com peito de frango." },
+          { id: 22, name: "Misto", obs: null, price: 7.00, category: "Lanches e Pratos", image: ImgMisto, description: "Queijo e presunto." },
           { id: 23, name: "Hamburguer simples", obs: null, price: 13.00, category: "Lanches e Pratos", image: ImgHamburguer, description: "Hambúrguer artesanal com queijo cheddar, carne suculenta, presunto, tomate, alface e cebola." },
           { id: 24, name: "Tapioca", obs: "P", price: 8.00, category: "Lanches e Pratos", image: ImgTapioca, description: "Tapioca fresquinha feita na hora. Escolha 1 sabor entre salgados ou doces.", flavorCategories: TAPIOCA_FLAVOR_CATEGORIES, maxFlavors: 1 },
           { id: 25, name: "Tapioca", obs: "M", price: 11.00, category: "Lanches e Pratos", image: ImgTapioca, description: "Tapioca fresquinha feita na hora. Escolha até 2 sabores entre salgados ou doces.", flavorCategories: TAPIOCA_FLAVOR_CATEGORIES, maxFlavors: 2 },
           { id: 26, name: "Tapioca", obs: "G", price: 15.00, category: "Lanches e Pratos", image: ImgTapioca, description: "Tapioca fresquinha feita na hora. Escolha até 3 sabores entre salgados ou doces.", flavorCategories: TAPIOCA_FLAVOR_CATEGORIES, maxFlavors: 3 },
-          { id: 27, name: "Cuscuz recheado", obs: null, price: 13.00, category: "Lanches e Pratos", image: ImgCuscuz, description: "Cuscuz nordestino caprichado e recheado com ingredientes saborosos, feito com carinho." },
+          { id: 27, name: "Cuscuz recheado", obs: null, price: 13.00, category: "Lanches e Pratos", image: ImgCuscuz, description: "Cuscuz nordestino caprichado e recheado com ingredientes saborosos, feito com carinho.", flavors: ["Queijo", "Presunto", "Calabresa", "Frango", "Ovo", "Charque"] },
         ],
         salgadinhos: [
-          { id: 28, name: "Gravata", obs: "30 g", price: 2.00, category: "Salgadinhos e Pipocas", image: null },
-          { id: 29, name: "Reizinho", obs: "30 g", price: 2.00, category: "Salgadinhos e Pipocas", image: null },
-          { id: 30, name: "Fandangos", obs: "23 g", price: 2.00, category: "Salgadinhos e Pipocas", image: null },
-          { id: 31, name: "Cebolitos", obs: "21 g", price: 2.00, category: "Salgadinhos e Pipocas", image: null },
-          { id: 32, name: "Cheetos", obs: "21 g", price: 2.00, category: "Salgadinhos e Pipocas", image: null },
-          { id: 33, name: "Cheetos", obs: "40 g", price: 4.00, category: "Salgadinhos e Pipocas", image: null },
-          { id: 34, name: "Cebolitos", obs: "45 g", price: 5.00, category: "Salgadinhos e Pipocas", image: null },
-          { id: 35, name: "Fandangos", obs: "35 g", price: 3.00, category: "Salgadinhos e Pipocas", image: null },
-          { id: 36, name: "Ruffles", obs: "32 g", price: 5.00, category: "Salgadinhos e Pipocas", image: null },
-          { id: 37, name: "Doritos", obs: "32 g", price: 5.00, category: "Salgadinhos e Pipocas", image: null },
-          { id: 38, name: "Sensações", obs: "40 g", price: 6.50, category: "Salgadinhos e Pipocas", image: null },
-          { id: 39, name: "Biscoito Treloso", obs: "120 g", price: 2.50, category: "Salgadinhos e Pipocas", image: null },
-          { id: 40, name: "Pipoca de microondas", obs: "100 g", price: 7.00, category: "Salgadinhos e Pipocas", image: null },
-          { id: 41, name: "Pipoca estourada", obs: null, price: 8.00, category: "Salgadinhos e Pipocas", image: null },
+          { id: 28, name: "Gravata", obs: "30 g", price: 2.00, category: "Salgadinhos e Pipocas", image: ImgGravata },
+          { id: 29, name: "Reizinho", obs: "30 g", price: 2.00, category: "Salgadinhos e Pipocas", image: ImgReizinho },
+          { id: 30, name: "Fandangos", obs: "23 g", price: 2.00, category: "Salgadinhos e Pipocas", image: ImgFandangos },
+          { id: 31, name: "Cebolitos", obs: "21 g", price: 2.00, category: "Salgadinhos e Pipocas", image: ImgCebolitos },
+          { id: 32, name: "Cheetos", obs: "21 g", price: 2.00, category: "Salgadinhos e Pipocas", image: ImgCheetos },
+          { id: 33, name: "Cheetos", obs: "40 g", price: 4.00, category: "Salgadinhos e Pipocas", image: ImgCheetos },
+          { id: 34, name: "Cebolitos", obs: "45 g", price: 5.00, category: "Salgadinhos e Pipocas", image: ImgCebolitos },
+          { id: 35, name: "Fandangos", obs: "35 g", price: 3.00, category: "Salgadinhos e Pipocas", image: ImgFandangos },
+          { id: 36, name: "Ruffles", obs: "32 g", price: 5.00, category: "Salgadinhos e Pipocas", image: ImgRuffles },
+          { id: 37, name: "Doritos", obs: "32 g", price: 5.00, category: "Salgadinhos e Pipocas", image: ImgDoritos },
+          { id: 38, name: "Sensações", obs: "40 g", price: 6.50, category: "Salgadinhos e Pipocas", image: ImgSensacoes },
+          { id: 39, name: "Biscoito Treloso", obs: "120 g", price: 2.50, category: "Salgadinhos e Pipocas", image: ImgTreloso, description: "Biscoito Treloso crocante e saboroso. Escolha o sabor que preferir!", flavors: TRELOSO_FLAVORS },
+          { id: 40, name: "Pipoca de microondas", obs: "100 g", price: 7.00, category: "Salgadinhos e Pipocas", image: ImgPipoca },
+          { id: 41, name: "Pipoca estourada", obs: null, price: 8.00, category: "Salgadinhos e Pipocas", image: ImgPipocaEstourada },
         ],
         saladaFrutas: [
-          { id: 42, name: "Salada de frutas", obs: "250 ml", price: 6.00, category: "Salada de Frutas e Doces", image: ImgSaladaFrutas, description: "Salada de frutas frescas e geladas, preparada com frutas selecionadas da estação." },
-          { id: 43, name: "Salada de frutas", obs: "300 ml", price: 7.00, category: "Salada de Frutas e Doces", image: ImgSaladaFrutas, description: "Salada de frutas frescas e geladas, preparada com frutas selecionadas da estação." },
-          { id: 44, name: "Salada de frutas", obs: "400 ml", price: 8.00, category: "Salada de Frutas e Doces", image: ImgSaladaFrutas, description: "Salada de frutas frescas e geladas, preparada com frutas selecionadas da estação." },
-          { id: 45, name: "Salada de frutas", obs: "500 ml", price: 10.00, category: "Salada de Frutas e Doces", image: ImgSaladaFrutas, description: "Salada de frutas frescas e geladas, preparada com frutas selecionadas da estação." },
-          { id: 46, name: "Salada de frutas", obs: "770 ml", price: 13.00, category: "Salada de Frutas e Doces", image: ImgSaladaFrutas, description: "Salada de frutas frescas e geladas, preparada com frutas selecionadas da estação." },
+          { id: 42, name: "Salada de frutas", obs: "250 ml", price: 6.00, category: "Salada de Frutas e Doces", image: ImgSaladaFrutas, description: "Salada de frutas frescas e geladas, preparada com frutas selecionadas da estação.", fruits: SALADA_COMPLEMENTOS, includedFruits: 2, extraFruitPrice: 1.00, fruitsLabel: "Complementos" },
+          { id: 43, name: "Salada de frutas", obs: "300 ml", price: 7.00, category: "Salada de Frutas e Doces", image: ImgSaladaFrutas, description: "Salada de frutas frescas e geladas, preparada com frutas selecionadas da estação.", fruits: SALADA_COMPLEMENTOS, includedFruits: 2, extraFruitPrice: 1.00, fruitsLabel: "Complementos" },
+          { id: 44, name: "Salada de frutas", obs: "400 ml", price: 8.00, category: "Salada de Frutas e Doces", image: ImgSaladaFrutas, description: "Salada de frutas frescas e geladas, preparada com frutas selecionadas da estação.", fruits: SALADA_COMPLEMENTOS, includedFruits: 2, extraFruitPrice: 1.00, fruitsLabel: "Complementos" },
+          { id: 45, name: "Salada de frutas", obs: "500 ml", price: 10.00, category: "Salada de Frutas e Doces", image: ImgSaladaFrutas, description: "Salada de frutas frescas e geladas, preparada com frutas selecionadas da estação.", fruits: SALADA_COMPLEMENTOS, includedFruits: 2, extraFruitPrice: 1.00, fruitsLabel: "Complementos" },
+          { id: 46, name: "Salada de frutas", obs: "770 ml", price: 13.00, category: "Salada de Frutas e Doces", image: ImgSaladaFrutas, description: "Salada de frutas frescas e geladas, preparada com frutas selecionadas da estação.", fruits: SALADA_COMPLEMENTOS, includedFruits: 2, extraFruitPrice: 1.00, fruitsLabel: "Complementos" },
         ],
         bebidasQuentes: [
           { id: 47, name: "Chocolate quente", obs: "250 ml", price: 6.00, category: "Bebidas Quentes", image: ImgChocolateQuente, description: "Chocolate quente cremoso e quentinho, feito com cacau selecionado. Perfeito para qualquer momento!" },
-          { id: 48, name: "Chocolate quente", obs: "300 ml", price: 8.00, category: "Bebidas Quentes", image: ImgChocolateQuente, description: "Chocolate quente cremoso e quentinho, feito com cacau selecionado. Perfeito para qualquer momento!" },
-          { id: 49, name: "Chocolate quente", obs: "400 ml", price: 10.00, category: "Bebidas Quentes", image: ImgChocolateQuente, description: "Chocolate quente cremoso e quentinho, feito com cacau selecionado. Perfeito para qualquer momento!" },
-          { id: 50, name: "Chocolate quente", obs: "500 ml", price: 12.00, category: "Bebidas Quentes", image: ImgChocolateQuente, description: "Chocolate quente cremoso e quentinho, feito com cacau selecionado. Perfeito para qualquer momento!" },
-          { id: 51, name: "Chocolate quente", obs: "770 ml", price: 17.00, category: "Bebidas Quentes", image: ImgChocolateQuente, description: "Chocolate quente cremoso e quentinho, feito com cacau selecionado. Perfeito para qualquer momento!" },
+          { id: 48, name: "Chocolate quente", obs: "300 ml", price: 8.00, category: "Bebidas Quentes", image: ImgChocolateCopo, description: "Chocolate quente cremoso e quentinho, feito com cacau selecionado. Perfeito para qualquer momento!" },
+          { id: 49, name: "Chocolate quente", obs: "400 ml", price: 10.00, category: "Bebidas Quentes", image: ImgChocolateCopo, description: "Chocolate quente cremoso e quentinho, feito com cacau selecionado. Perfeito para qualquer momento!" },
+          { id: 50, name: "Chocolate quente", obs: "500 ml", price: 12.00, category: "Bebidas Quentes", image: ImgChocolateCopo, description: "Chocolate quente cremoso e quentinho, feito com cacau selecionado. Perfeito para qualquer momento!" },
+          { id: 51, name: "Chocolate quente", obs: "770 ml", price: 17.00, category: "Bebidas Quentes", image: ImgChocolateCopo, description: "Chocolate quente cremoso e quentinho, feito com cacau selecionado. Perfeito para qualquer momento!" },
           { id: 52, name: "Café", obs: "250 ml", price: 4.00, category: "Bebidas Quentes", image: ImgCafe, description: "Café fresquinho e aromático, preparado na hora com grãos selecionados." },
           { id: 53, name: "Cappuccino", obs: "250 ml", price: 6.00, category: "Bebidas Quentes", image: ImgCafe, description: "Cappuccino cremoso com espuma de leite e toque de canela, uma experiência especial." },
           { id: 54, name: "Suco natural - Maracujá", obs: "300 ml", price: 6.00, category: "Bebidas Quentes", image: ImgSucoNatural, description: "Suco natural de maracujá feito na hora, puro e sem conservantes. Refrescante e saboroso!" },
@@ -186,8 +205,8 @@ const Data = [
           { id: 75, name: "Coca-Cola 1 litro", obs: null, price: 8.00, category: "Bebidas Geladas", image: ImgCocaCola1L },
           { id: 76, name: "Suco Del Valle", obs: "450 ml", price: 4.00, category: "Bebidas Geladas", image: ImgSucoDelValle },
           { id: 77, name: "Monster", obs: "473 ml", price: 13.00, category: "Bebidas Geladas", image: ImgMonster },
-          { id: 78, name: "RedBull", obs: "250 ml", price: 11.50, category: "Bebidas Geladas", image: null },
-          { id: 79, name: "TNT", obs: "473 ml", price: 10.00, category: "Bebidas Geladas", image: null },
+          { id: 78, name: "RedBull", obs: "250 ml", price: 11.50, category: "Bebidas Geladas", image: ImgRedBull },
+          { id: 79, name: "TNT", obs: "473 ml", price: 10.00, category: "Bebidas Geladas", image: ImgTNT },
         ],
       }
     }

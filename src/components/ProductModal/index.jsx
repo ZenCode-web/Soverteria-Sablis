@@ -265,10 +265,10 @@ const ProductModal = ({ product, onClose }) => {
                             <div>
                                 <div className="flex items-center justify-between mb-1">
                                     <p className="font-main font-bold text-header text-sm">
-                                        Frutas
+                                        {product.fruitsLabel || "Frutas"}
                                     </p>
                                     <span className="text-xs font-main text-header/50">
-                                        Inclui {product.includedFruits}
+                                        Tem direito a {product.includedFruits} — extras +R$ {(product.extraFruitPrice || 1).toFixed(2).replace(".", ",")} cada
                                     </span>
                                 </div>
                                 {extraFruitsCount > 0 && (

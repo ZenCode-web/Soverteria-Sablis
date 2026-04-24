@@ -26,7 +26,7 @@ const Footer = () => {
                         <FaPhone className="text-surface text-[13px]" />
                         <P className="text-surface text-[14px]" valor="(81) 9 9549-4243"/>
                     </div>
-                    <P className="text-surface text-[12px] w-70 text-center" valor="Segunda e Sábado das 8h da manhã as10 horas dá noite. Domingo das 12h as 10 horas da noite."/>
+                    <P className="text-surface text-[12px] w-70 text-center" valor="Segunda a Sábado das 8h da manhã as10 horas dá noite. Domingo das 12h as 10 horas da noite."/>
                 </div>
                 
                       

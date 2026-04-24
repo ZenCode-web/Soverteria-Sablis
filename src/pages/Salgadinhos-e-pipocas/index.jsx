@@ -13,8 +13,8 @@ const SalgadinhosEpipocas = () => {
           </div>
           <div className="flex justify-center items-center w-full lg:max-w-5xl">
             <div className="px-4 grid lg:grid-cols-3 grid-cols-2 gap-4 bg-background lg:mx-auto w-full">
-                {products.map(({ id, name, obs, price, image, category }) => (
-                    <ProductCard key={id} id={id} name={name} price={price} alt={name} obs={obs} image={image} category={category} />
+                {products.map(({ id, name, obs, price, image, category, description, flavors }) => (
+                    <ProductCard key={id} id={id} name={name} price={price} alt={name} obs={obs} image={image} category={category} description={description} flavors={flavors} />
                 ))}
             </div>
           </div>

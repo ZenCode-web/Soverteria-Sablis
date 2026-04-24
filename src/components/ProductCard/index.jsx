@@ -2,17 +2,16 @@ import { useState } from "react"
 import { useCart } from "../../context/CartContext"
 import ProductModal from "../ProductModal"
 
-const NO_MODAL_CATEGORIES = ["Bebidas Geladas", "Salgadinhos e Pipocas"]
-
-const ProductCard = ({ id, name, price, image, alt, badge, obs, category, description, flavors, calda, flavorCategories, maxFlavors, fruits, includedFruits, extraFruitPrice, addons }) => {
-    const { addToCart } = useCart()
+const ProductCard = ({ id, name, price, image, alt, badge, obs, category, description, flavors, calda, flavorCategories, maxFlavors, fruits, includedFruits, extraFruitPrice, addons, fruitsLabel }) => {
+    const { addToCart, setIsCartOpen } = useCart()
     const [modalOpen, setModalOpen] = useState(false)
 
     function handleAdd() {
-        if (NO_MODAL_CATEGORIES.includes(category)) {
-            addToCart({ id, name, price, image, obs, category })
-        } else {
+        if (description || flavors || flavorCategories || fruits) {
             setModalOpen(true)
+        } else {
+            addToCart({ id, name, price, image, obs, category })
+            setIsCartOpen(true)
         }
     }
 
@@ -55,7 +54,7 @@ const ProductCard = ({ id, name, price, image, alt, badge, obs, category, descri
 
             {modalOpen && (
                 <ProductModal
-                    product={{ id, name, price, image, obs, category, description, flavors, calda, flavorCategories, maxFlavors, fruits, includedFruits, extraFruitPrice, addons }}
+                    product={{ id, name, price, image, obs, category, description, flavors, calda, flavorCategories, maxFlavors, fruits, includedFruits, extraFruitPrice, addons, fruitsLabel }}
                     onClose={() => setModalOpen(false)}
                 />
             )}
