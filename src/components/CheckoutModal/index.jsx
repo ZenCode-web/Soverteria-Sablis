@@ -44,7 +44,7 @@ const CheckoutModal = ({ onClose }) => {
     const deliveryModeInfo = DELIVERY_MODES.find((m) => m.id === deliveryMode)
 
     function handleFinalConfirm() {
-        let msg = `*Novo pedido - Soveteria Sablis* 🍦\n\n`
+        let msg = `*Novo pedido - Sorveteria Sambles* 🍦\n\n`
         msg += `*Cliente:* ${form.name}\n`
         msg += `*Modalidade:* ${deliveryModeInfo?.label || deliveryMode}\n`
         if (deliveryMode === "entrega") {
