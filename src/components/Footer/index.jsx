@@ -10,7 +10,7 @@ const Footer = () => {
            <section className="flex flex-col items-center gap-1.5 w-full lg:w-5xl lg:flex-row lg:justify-between ">
 
             <div className="flex flex-col items-center gap-1">
-                <h2 className="text-[20px] text-secondary font-display font-bold">Soveteria Sambris</h2>
+                <h2 className="text-[20px] text-secondary font-display font-bold">Sorveteria Sambles</h2>
                 <div className="flex items-center gap-1">
                     <P className="text-surface text-[11px] font-main italic" valor="O sabor que você merece "/>
                     <MdAutoAwesome className="text-yellow-400 text-[11px]" />
