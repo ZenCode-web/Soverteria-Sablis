@@ -37,7 +37,7 @@ const Footer = () => {
            </section>
 
             <div className="border-t border-surface/40 w-full pt-5 flex flex-col items-center mt-auto">
-                    <p className="text-surface text-[11px] font-main">© 2026 ZEM<span className="font-bold">CODE</span>.</p>
+                    <p className="text-surface text-[11px] font-main">© 2026 ZEM<span className="font-bold">TECH</span>.</p>
                 </div>
         </footer>
     )
