@@ -1,10 +1,37 @@
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState, useEffect } from "react"
+
+const COOKIE_NAME = "sablis_cart"
+const COOKIE_DAYS = 7
+
+function loadCartFromCookie() {
+    const match = document.cookie.split("; ").find((r) => r.startsWith(`${COOKIE_NAME}=`))
+    if (!match) return []
+    try {
+        return JSON.parse(decodeURIComponent(match.split("=")[1]))
+    } catch {
+        return []
+    }
+}
+
+function saveCartToCookie(cart) {
+    const expires = new Date()
+    expires.setDate(expires.getDate() + COOKIE_DAYS)
+    document.cookie = `${COOKIE_NAME}=${encodeURIComponent(JSON.stringify(cart))}; expires=${expires.toUTCString()}; path=/`
+}
+
+function deleteCookie() {
+    document.cookie = `${COOKIE_NAME}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`
+}
 
 const CartContext = createContext()
 
 export function CartProvider({ children }) {
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState(() => loadCartFromCookie())
     const [isCartOpen, setIsCartOpen] = useState(false)
+
+    useEffect(() => {
+        saveCartToCookie(cart)
+    }, [cart])
 
     function addToCart(product) {
         const cartKey = [
@@ -43,11 +70,16 @@ export function CartProvider({ children }) {
         )
     }
 
+    function clearCart() {
+        setCart([])
+        deleteCookie()
+    }
+
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0)
     const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
 
     return (
-        <CartContext.Provider value={{ cart, isCartOpen, setIsCartOpen, addToCart, removeFromCart, updateQuantity, totalItems, totalPrice }}>
+        <CartContext.Provider value={{ cart, isCartOpen, setIsCartOpen, addToCart, removeFromCart, updateQuantity, clearCart, totalItems, totalPrice }}>
             {children}
         </CartContext.Provider>
     )

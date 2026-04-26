@@ -1,6 +1,6 @@
 # 🍦 Sorveteria Sambles
 
-Um site moderno e responsivo desenvolvido para a **Sorveteria Sablis**, focado em proporcionar uma experiência visual deliciosa e intuitiva para os clientes.
+Um site moderno e responsivo desenvolvido para a **Sorveteria Sambles**, focado em proporcionar uma experiência visual deliciosa e intuitiva para os clientes.
 
 ---
 

@@ -30,7 +30,7 @@ const Header = () => {
 
                 <div className="flex flex-col gap-0 leading-none">
 
-                 <H2 className="text-[18px] font-main font-bold text-secondary lg:text-[24px]" valor="Soveteria"/>
+                 <H2 className="text-[18px] font-main font-bold text-secondary lg:text-[24px]" valor="Sorveteria"/>
 
                  <P className="text-[14px] font-normal italic font-display text-surface lg:text-[18px]" valor="Sambles"/>
 
