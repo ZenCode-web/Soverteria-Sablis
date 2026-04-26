@@ -207,7 +207,7 @@ const Data = [
           { id: 75, name: "Coca-Cola 1 litro", obs: null, price: 8.00, category: "Bebidas Geladas", image: ImgCocaCola1L },
           { id: 76, name: "Suco Del Valle", obs: "450 ml", price: 4.00, category: "Bebidas Geladas", image: ImgSucoDelValle },
           { id: 77, name: "Monster", obs: "473 ml", price: 13.00, category: "Bebidas Geladas", image: ImgMonster },
-          { id: 78, name: "RedBull", obs: "250 ml", price: 11.50, category: "Bebidas Geladas", image: ImgRedBull },
+          { id: 78, name: "RedBull", obs: "250 ml", price: 11.50, category: "Bebidas Geladas", image: ImgRedBull, flavors: ["Zero", "Pomelo"] },
           { id: 79, name: "TNT", obs: "473 ml", price: 10.00, category: "Bebidas Geladas", image: ImgTNT },
         ],
       }
