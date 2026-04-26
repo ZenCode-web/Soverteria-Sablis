@@ -69,7 +69,7 @@ const CheckoutModal = ({ onClose }) => {
             msg += `*Taxa de entrega:* R$ ${deliveryFee.toFixed(2).replace(".", ",")}\n`
         }
         msg += `*Total:* R$ ${grandTotal.toFixed(2).replace(".", ",")}`
-        window.open(`https://wa.me/5581989947796?text=${encodeURIComponent(msg)}`, "_blank")
+        window.open(`https://wa.me/5581995494243?text=${encodeURIComponent(msg)}`, "_blank")
         clearCart()
         onClose()
     }

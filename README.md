@@ -6,7 +6,7 @@ Um site moderno e responsivo desenvolvido para a **Sorveteria Sambles**, focado 
 
 ## 🚀 Sobre o Projeto
 
-Este projeto está sendo desenvolvido pela **ZenCode**, utilizando as tecnologias mais modernas do ecossistema Front-end para garantir performance e um design impecável. O foco principal é a vitrine de produtos e a facilidade de navegação para o usuário final.
+Este projeto está sendo desenvolvido pela **ZENTECH**, utilizando as tecnologias mais modernas do ecossistema Front-end para garantir performance e um design impecável. O foco principal é a vitrine de produtos e a facilidade de navegação para o usuário final.
 
 ### ✨ Diferenciais
 - **Design Elegante:** Inspirado em tons terrosos e pastéis.
@@ -28,7 +28,7 @@ O projeto foi construído com a stack:
 
 ## 📂 Estrutura de Pastas
 
-Seguindo os padrões de mercado da **ZenCode**:
+Seguindo os padrões de mercado da **ZENTECH**:
 
 ```text
 src/

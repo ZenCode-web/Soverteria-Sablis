@@ -9,12 +9,14 @@ import InconBebidasQuentes from "../assets/icon/InconBebidasQuentes.png"
 import InconBebidasGeladas from "../assets/icon/InconBebidasGeladas.png"
 import BannerSovete from "../assets/icon/InconTacaDeSovete1.png"
 
-import ImgSorvete from "../assets/imgs/sorvete-casquinha.png"
+
 import ImgSovete1copo from "../assets/imgs/sovete1copo.png"
 import ImgSovete2Cascinha from "../assets/imgs/sovete2copo.png"
 import ImgSovete2Copo from "../assets/imgs/sovete2bolasCopo.png"
 import ImgSovete3Copo from "../assets/imgs/sovete3copo.png"
-import ImgSoveteMeioLitro from "../assets/imgs/soveteMeioLitro.png"
+import ImgSoveteMeioLitro from "../assets/imgs/sovete750ml.png"
+import ImgSovete1l from "../assets/imgs/sovete1l.png"
+
 
 import ImgTrufa from "../assets/imgs/trufa.png"
 import ImgMilkshake from "../assets/imgs/milk-shake.png"
@@ -119,8 +121,8 @@ const Data = [
           { id: 2, name: "Sorvete 2 bolas", obs: "casquinha", price: 9.00, category: "Sorvetes e Gelados", image: ImgSovete2Cascinha, description: "Duas bolas de sorvete artesanal na casquinha crocante. Escolha até 2 sabores e a calda!", flavors: SORVETE_FLAVORS, maxFlavors: 2, calda: SORVETE_CALDA },
           { id: 3, name: "Sorvete 2 bolas", obs: "copo", price: 8.00, category: "Sorvetes e Gelados", image:  ImgSovete2Copo, description: "Duas bolas de sorvete artesanal servido em copo. Escolha até 2 sabores e a calda!", flavors: SORVETE_FLAVORS, maxFlavors: 2, calda: SORVETE_CALDA },
           { id: 4, name: "Sorvete 3 bolas", obs: "copo", price: 11.00, category: "Sorvetes e Gelados", image: ImgSovete3Copo, description: "Três bolas de sorvete artesanal servido em copo. Escolha até 3 sabores e a calda!", flavors: SORVETE_FLAVORS, maxFlavors: 3, calda: SORVETE_CALDA },
-          { id: 5, name: "Sorvete de 750ml", obs: null, price: 23.00, category: "Sorvetes e Gelados", image: ImgSoveteMeioLitro, description: "Sorvete artesanal meio litro, ideal para compartilhar. Disponível em 23 sabores!", flavors: SORVETE_FLAVORS, calda: SORVETE_CALDA },
-          { id: 6, name: "Sorvete 1 litro", obs: null, price: 29.00, category: "Sorvetes e Gelados", image: ImgSorvete, description: "Sorvete artesanal 1 litro, perfeito para a família. Escolha entre 23 sabores incríveis!", flavors: SORVETE_FLAVORS, calda: SORVETE_CALDA },
+          { id: 5, name: "Sorvete de 750ml", obs: null, price: 23.00, category: "Sorvetes e Gelados", image: ImgSoveteMeioLitro, description: "Sorvete artesanal meio litro, ideal para compartilhar. Disponível em 23 sabores!", flavors: ["Brigadeiro", "Napolitano", "Morango", "Misto"] },
+          { id: 6, name: "Sorvete 1 litro", obs: null, price: 29.00, category: "Sorvetes e Gelados", image: ImgSovete1l, description: "Sorvete artesanal 1 litro, perfeito para a família. Escolha entre 23 sabores incríveis!", flavors: ["Brigadeiro", "Napolitano", "Morango", "Misto"] },
           { id: 7, name: "Trufa", obs: "unidade", price: 3.00, category: "Sorvetes e Gelados", image: ImgTrufa, description: "Trufa artesanal cremosa e irresistível, feita com os melhores ingredientes.", flavors: TRUFA_FLAVORS },
         ],
         acaiMilkshake: [
